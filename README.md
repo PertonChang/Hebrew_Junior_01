@@ -1,8 +1,6 @@
 # `Hebrew_Junior_01`
 希伯來文新手入門課程 - 01
 
-![耶和華](images/耶和華.jpg)
-
 ![以色列國旗](images/以色列國旗.png)
 
 
