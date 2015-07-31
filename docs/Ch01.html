@@ -1,126 +1,676 @@
+ï»¿<!DOCTYPE html>
 <html>
 <head>
+<title>CH01</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
 </head>
-
 <body>
-<h1>²Ä 1 ³¹ 22­Ó¦r¥À</h1>
-<p>´¿¸g¦]¬°¾\Åª¸t¸g¤¤ªº¸Ö½g119³¹¡A¤~ª¾¹D<strong>¸Ö½g</strong>³o¨÷®Ñ¨÷¬OÂÇ¥Ñ22­Ó§Æ§B¨Ó¤å¦r¥À¡A¨Ã¥B¨Ì·Ó¨ä¦r¥À¶¶§Ç¡A¥H¨C­Ó¦r¥À¢·¤p¸`ªº¬[ºc¤è¦¡¼¶¼g¦Ó¦¨¡C</p>
-<pre><code>©Ò¥H¡A¸Ö½g119³¹´N¦³ 22 * 8 = 176 ¤p¸`¡C
+<h1>ç¬¬ 1 ç«  22å€‹å­—æ¯</h1>
+
+<h4>é–’è©±å®¶å¸¸</h4>
+
+<p>æ›¾ç¶“å› ç‚ºé–±è®€è–ç¶“ä¸­çš„è©©ç¯‡119ç« ï¼Œæ‰çŸ¥é“<strong>è©©ç¯‡</strong>é€™å·æ›¸å·æ˜¯è—‰ç”±22å€‹å¸Œä¼¯ä¾†æ–‡å­—æ¯ï¼Œä¸¦ä¸”ä¾ç…§å…¶å­—æ¯é †åºï¼Œä»¥æ¯å€‹å­—æ¯ï¼˜å°ç¯€çš„æ¶æ§‹æ–¹å¼æ’°å¯«è€Œæˆã€‚</p>
+
+<pre><code>æ‰€ä»¥ï¼Œè©©ç¯‡119ç« å°±æœ‰ 22 * 8 = 176 å°ç¯€ã€‚
 </code></pre>
 
-<p>¹ï©ó§Æ§B¨Ó¤åªº22­Ó¦r¥À¡A¬Oªø±o¤°»ò¼Ò¼Ë¡H³o¥÷¦n©_¤ß¡A´N¦¹²`ÂÃ¤ß¤¤³\¤[¡C</p>
-<p>ªñ¨Ó¡A¦³©¯¦b<strong>FB</strong>ªÀ¸s<strong><a href="https://www.facebook.com/groups/308100932705850/">¾Ç²ß§Æ§B¨Ó»y-©_¥¬¯÷</a></strong>¬İ¨ì¤@¸s¦P¦n¦b¾Ç²ß³oºØ»y¨¥¡A¤]´N¤@ÀY®â¤U¡A¶}©l½ñ¤J¾Ç²ß§Æ§B¨Ó¤å¤§¸ô¡C</p>
-<p>¦]¬°µ§ªÌ¬O­Óªì¾ÇªÌ¡A¥[¤W­Ó¤H¦Û¾Ç¨S¤W»y¨¥¯Z¸É²ß¡F©Ò¥H¸g¾ú¦a¤£¤Ö¾Ç²ß¤Wªº²~ÀV»Pª¼ÂI¡A¤~·Q­n±N³o¹Lµ{ªºÂIÂIºwºw°O¿ı¤U¡A¥HÅW¤é«á·s¶iªºªì¾ÇªÌ¡C</p>
-<h3>¥»³¹¾Ç²ß­«ÂI¡G</h3>
-<ul>
-<li>§Æ§B¨Ó¤å®Ñ¼g²ßºD¡A¬O¥Ñ¥k¦Ü¥ª¡C</li>
-<li>§Æ§B¨Ó¤å¦³22­Ó¦r¥À¡C</li>
-<li>22­Ó¦r¥À¤¤¡A¦³¢²­Ó<strong>¥À­µ¦r¥À</strong></li>
-<li>22­Ó¦r¥À¤¤¡A¦³¢³­Ó<strong>³ï­µ¦r¥À</strong></li>
-<li>22­Ó¦r¥À¤¤¡A¦³¢´­Ó¦r¥À¨ã¦³<strong><em>¦r§À§Î¦¡ (sofit)</em></strong></li>
-<li>22­Ó¦r¥À¤¤¡A¦³¢µ­Ó¦r¥À¡A¨ã¦³¨âºØµo­µ¤è¦¡¡G¡y¶ë­µ¡z¡B¡yÀ¿­µ¡z¡C³oÃş¦r¥ÀºÙ¬° <strong>Begadkephat</strong>¡C</li>
-</ul>
-<hr />
-<h2>1.1¡@22­Ó¦r¥À</h2>
-<ul>
-<li>
-<p>§Æ§B¨Ó¤å®Ñ¼g²ßºD¡A¬O¥Ñ¥k¦Ü¥ª¡C</p>
-</li>
-<li>
-<p>§Æ§B¨Ó¤å¦@­p22­Ó¦r¥À¡A¥D­n¬O§@¬°<strong>¤l­µ</strong>¨Ï¥Î¡C</p>
-<p><img src="../images/img01-00.png" alt="22­Ó¤l­µ¦r¥À" /></p>
-</li>
-<li>
-<p>¨C­Ó¦r¥À¦h¦³¨ä¦U¦ÛªºÅª­µ¡C[²V²cªÆ»a][]</p>
-<p><img src="../images/img01-01.png" alt="22­Ó¤l­µ¦r¥À" /></p>
-</li>
-<li>
-<p>¨C­Ó¦r¥À¦h¥Nªí¤@­Ó¼Æ¦r­È¡C¨Ò¦p Aleph &#1488; ¥Nªí¼Æ¦r 1¡C</p>
-<p>¦]µÛ¦³³o¼ËªºÃö«Y¡A©Ò¥H±N22­Ó¦r¥À¡A¤À¸Ñ¦¨ 9, 9, 4 ¨Ó±Æ¦C¡A¦n¤è«K¾Ç²ß¡B°O¾Ğ¡C</p>
-<p><img src="../images/img01-02.png" alt="¦r¥À»P¼Æ¦r" /></p>
-</li>
-</ul>
-<blockquote>
-<p>PS :</p>
-</blockquote>
-<h2>1.2¡@¢²­Ó¥À­µ¦r¥À &#1492; &#1493; &#1497;</h2>
-<ul>
-<li>
-<p>:</p>
-<p><img src="../images/img01-03.png" alt="¥À­µ¦r¥À" /></p>
-</li>
-<li>
-<ul>
-<li>¥À­µ¦r¥À</li>
-</ul>
-</li>
-<li>
-<p>¢²­Ó¥À­µ¦r¥À &#1492; &#1493; &#1497;</p>
-</li>
-</ul>
-<h2>1.3¡@¢³­Ó³ï­µ¦r¥À &#1488; &#1506; &#1492; &#1495;</h2>
-<ul>
-<li>
-<p>:</p>
-<p><img src="../images/img01-04.png" alt="³ï­µ¦r¥À" /></p>
-</li>
-<li>
-<p>¦r¥À &#1512; ¤]¦³³ï­µªí²{</p>
-</li>
-<li>
-<p>¢³­Ó³ï­µ¦r¥À</p>
-<ul>
-<li>&#1488;</li>
-<li>&#1492;</li>
-<li>&#1495;</li>
-<li>&#1506;</li>
-</ul>
-</li>
-</ul>
-<h2>1.4¡@¢´­Ó¦r¥À¦³¦r§À§Î¦¡ (sofit) &#1509;/&#1510; ,&#1507;/&#1508; ,&#1503;/&#1504; ,&#1501;/&#1502; ,&#1498;/&#1499;</h2>
-<ul>
-<li>
-<p>:</p>
-<p><img src="../images/img01-05.png" alt="¦r§À§Î¦¡" /></p>
-<p>¨Ò¦p¡G¹D¸ô &#1491;&#1512;&#1498;¡A¥@¬É &#1488;&#1512;&#1509;¡C</p>
-</li>
-</ul>
-<h2>1.5¡@¦³¢µ­ÓBegadkephat¦r¥À¡C</h2>
-<p>§Æ§B¨Ó¤å¦r¥À¤¤¡A¦³¢µ­Ó¦r¥À¨ã¦³¨âºØµo­µ¤è¦¡¡C³o6­Ó¦r¥ÀºÙ¬° Begadkephat¡C
-¥¦­Ì·|¥H¦r¥À¦³¨S¦³§t<strong>ÂI²Å¸¹</strong>¨Óªí¥Ü</p>
-<ul>
-<li>§tÂI²Å¸¹ªº¦r¥À¡A¥H¡y¶ë­µ¡z¨Óµo­µ¡C¡]¦p­^¤åªº b, p¡^</li>
-<li>
-<p>¤£§tÂI²Å¸¹ªº¦r¥À¡A¥H¡yÀ¿­µ¡z¨Óµo­µ¡C¡]¦p­^¤åªº v, f¡^</p>
-<p><img src="../images/img01-06.png" alt="Begadkephat¦r¥À" /></p>
-</li>
-</ul>
-<blockquote>
-<p>PS : ¨Ì¾Ú<a href="https://www.facebook.com/groups/308100932705850/">¾Ç²ß§Æ§B¨Ó»y-©_¥¬¯÷</a>ªº <a href="https://www.facebook.com/ha.terence?hc_location=ufi">Terence Ha</a> ¹ï Begadkephat ªº»¡©ú¡A¥i¥H§ó²M·¡©ú¥Õ Begadkephat ªº·N¸q¡C</p>
-<p>Begadkephat¡A¬O­É¥Î¤F bet ªº b¡Agimmel ªº g¡Adalet ªº d¡A
-kaf ªº k¡Apey ªº ph ©M tav ªº t¡A
-¥[¤WÃı¥À(¥À­µ)«á¡Ab-g-d ÅÜ¦¨ begad¡Ak-ph-t ÅÜ¦¨ kephat¡C</p>
-</blockquote>
-<h2>1.6¡@Á`µ²</h2>
-<p>§@ªÌ¦b­Ó¤H³¡¸¨®æ<a href="http://pertonchang.blogspot.tw/">Blog</a>¤¤¡A±`¦³¤À¨É§Æ§B¨Ó¤å¾Ç²ß¤ß±o¤å³¹¡AÅªªÌ¥i¦h¥[¥H¾\Äı¡C</p>
-<ul>
-<li>
-<p>¦r¥À·J¾ãªí</p>
-<p><img src="../images/img01-07.png" alt="¦r¥À·J¾ãªí" /></p>
-</li>
-<li>
-<p>²V²cªÆ»a</p>
-</li>
-</ul>
-<h2 id="dom">²V²cªÆ»a</h2>
-<p />
-<pre><code>­è¶}©l¾Ç²ß§Æ§B¨Ó¤å®É¡A³ÌÅıµ§ªÌ²V²c¤£²Mªº¨Æ±¡¡A´N¬O22­Ó¦r¥Àªº­^¤åÅª­µ¡C¨Ó¦Ûºô¯¸¡B¹Ï®Ñ©Î¬OªÀ¸sªº¨CºØ¸ê®Æ¦h¤Ö³£·|¦³¨Ç®t²§
+<p>å°æ–¼å¸Œä¼¯ä¾†æ–‡çš„22å€‹å­—æ¯ï¼Œæ˜¯é•·å¾—ä»€éº¼æ¨¡æ¨£ï¼Ÿé€™ä»½å¥½å¥‡å¿ƒï¼Œå°±æ­¤æ·±è—å¿ƒä¸­ã€‚</p>
+
+<p>è¿‘ä¾†ï¼Œæœ‰å¹¸åœ¨<strong>FBç¤¾ç¾¤</strong> <strong><a href="https://www.facebook.com/groups/308100932705850/">å­¸ç¿’å¸Œä¼¯ä¾†èª-å¥‡å¸ƒèŒ²</a></strong>çœ‹åˆ°ä¸€ç¾¤åŒå¥½ä¹Ÿåœ¨å­¸ç¿’é€™ç¨®èªè¨€ï¼Œå› æ­¤å°±è·Ÿè‘—ä¸€é ­æ ½ä¸‹ï¼Œæ­£å¼è¸å…¥å­¸ç¿’å¸Œä¼¯ä¾†æ–‡ä¹‹è·¯ã€‚</p>
+
+<p>æœæ’°æœ¬æ›¸çš„èµ·å› ï¼Œæºè‡ªæ–¼ç­†è€…æ˜¯å€‹å¸Œä¼¯ä¾†æ–‡çš„åˆå­¸æ–°ç”Ÿï¼ŒåŠ ä¸Šå€‹äººè‡ªå­¸æ²’ä¸Šèªè¨€è£œç¿’ç­ï¼›åœ¨ç¶“æ­·å­¸ç¿’éç¨‹çš„ç“¶é ¸èˆ‡é›£è™•å¾Œï¼Œæ‰æƒ³è¦å°‡é€™äº›æ­·ç¨‹çš„é»é»æ»´æ»´è¨˜éŒ„ä¸‹ï¼Œä»¥é¥—æ—¥å¾Œæ–°é€²çš„åˆå­¸è€…ï¼Œå…å»ä¸€äº›å­¸ç¿’ä¸Šçš„éšœç¤™èˆ‡è¿·èŒ«ï¼</p>
+
+<h4>æœ¬ç« å­¸ç¿’é‡é»ï¼š</h4>
+
+<pre><code>â˜… å¸Œä¼¯ä¾†æ–‡æ›¸å¯«ç¿’æ…£ï¼Œæ˜¯ç”±å³è‡³å·¦ã€‚
+â˜… å¸Œä¼¯ä¾†æ–‡æœ‰22å€‹å­—æ¯ã€‚
+â˜… 22å€‹å­—æ¯ä¸­ï¼Œæœ‰ï¼“å€‹**æ¯éŸ³å­—æ¯**
+â˜… 22å€‹å­—æ¯ä¸­ï¼Œæœ‰ï¼”å€‹**å–‰éŸ³å­—æ¯**
+â˜… 22å€‹å­—æ¯ä¸­ï¼Œæœ‰ï¼•å€‹å­—æ¯å…·æœ‰***å­—å°¾å½¢å¼ (sofit)***
+â˜… 22å€‹å­—æ¯ä¸­ï¼Œæœ‰ï¼–å€‹å­—æ¯ï¼Œå…·æœ‰å…©ç¨®ç™¼éŸ³æ–¹å¼ï¼šã€å¡éŸ³ã€ã€ã€æ“¦éŸ³ã€ã€‚é€™é¡å­—æ¯ç¨±ç‚º **Begadkephat**ã€‚  
+â˜… è¦è¨˜å¾— ï¼“ã€ï¼”ã€ï¼•ã€ï¼–çš„ç‰¹è‰²æ˜¯ä»€éº¼ï¼Ÿ
 </code></pre>
 
-<p>®ãÀR¤¤°êÃúÅµ½Õ¬d¡G»aªÆ¤§¤U</p>
-<p>¦^¨ì<a href="../README.md">¥Ø¿ı²M³æ</a>­¶¡A¿ïÅª¨ä¥L³¹¸`¡I</p>
-<p>¦^¨ì<a href="../README.md">¥Ø¿ı²M³æ</a>­¶¡A¿ïÅª¨ä¥L³¹¸`¡I</p>
+<hr>
 
+<h2>1.1ã€€22å€‹å­—æ¯</h2>
 
+<ul>
+<li><p>å¸Œä¼¯ä¾†æ–‡æ›¸å¯«ç¿’æ…£ï¼Œæ˜¯ç”±å³è‡³å·¦ã€‚</p></li>
+<li>
+<p>å¸Œä¼¯ä¾†æ–‡å…±è¨ˆ22å€‹å­—æ¯ï¼Œä¸»è¦æ˜¯ä½œç‚º<strong>å­éŸ³</strong>ä½¿ç”¨ã€‚</p>
+
+<p><a href="../images/img01-00.png" target="_blank"><img src="../images/img01-00.png" alt="22å€‹å­éŸ³å­—æ¯" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>æ¯å€‹å­—æ¯æœ‰å…¶å„è‡ªçš„<strong>è®€éŸ³</strong>ã€‚</p>
+
+<p><a href="../images/img01-01.png" target="_blank"><img src="../images/img01-01.png" alt="22å€‹å­éŸ³å­—æ¯" style="max-width:100%;"></a></p>
+
+<p>â˜… å¯åƒè€ƒ<a href="http://www.hebrew4christians.com/Grammar/Unit_One/Aleph-Bet/aleph-bet.html">Hebrew4Christians</a>ç¶²ç«™ï¼Œé»é¸<em>Recite! å–‡å­</em>åœ–æ¡ˆå”·ã€‚   </p>
+
+<p><a href="../images/h4c_%E5%AD%97%E6%AF%8D%E8%AE%80%E9%9F%B3.png" target="_blank"><img src="../images/h4c_%E5%AD%97%E6%AF%8D%E8%AE%80%E9%9F%B3.png" alt="h4c_å­—æ¯è®€éŸ³" style="max-width:100%;"></a></p>
+</li>
+<li><p>æ¯å€‹å­—æ¯å„æœ‰å…¶<strong>ç™¼éŸ³</strong>ï¼Œå¯ä»¥<a href="http://zh.wikipedia.org/zh-tw/%E5%9C%8B%E9%9A%9B%E9%9F%B3%E6%A8%99">International Phonetic Alphabet(IPA)</a>è¦å‰‡ä¾†è¡¨ç¤ºå…¶è­¯éŸ³ã€‚</p></li>
+<li>
+<p>æ¯å€‹å­—æ¯å„ä»£è¡¨ä¸€å€‹<strong>æ•¸å­—å€¼</strong>ã€‚ä¾‹å¦‚ Aleph × ä»£è¡¨æ•¸å­— 1ã€‚</p>
+
+<p>å› è‘—æœ‰é€™æ¨£çš„é—œä¿‚ï¼Œæ‰€ä»¥å°‡22å€‹å­—æ¯ï¼Œåˆ†è§£æˆ 9, 9, 4 ä¾†æ’åˆ—ï¼Œå¥½æ–¹ä¾¿å­¸ç¿’ã€è¨˜æ†¶ã€‚</p>
+
+<p><a href="../images/img01-02.png" target="_blank"><img src="../images/img01-02.png" alt="å­—æ¯èˆ‡æ•¸å­—" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>æ¯å€‹å­—æ¯çš„æ›¸å¯«ç­†é †ï¼Œå¦‚ä¸‹åœ–æ‰€ç¤ºã€‚</p>
+
+<p><a href="../images/img01-03.png" target="_blank"><img src="../images/img01-03.png" alt="æ¯éŸ³å­—æ¯" style="max-width:100%;"></a></p>
+</li>
+</ul>
+
+<blockquote>
+<p>PSï¼š<br>
+    â˜… å¸Œä¼¯ä¾†æ–‡çš„ç™»æ‰“ï¼Œå¯ä»¥ç”¨æ‰‹æ©Ÿã€é›»è…¦å–”ï¼</p>
+</blockquote>
+
+<h2>1.2ã€€ï¼“å€‹æ¯éŸ³å­—æ¯ ×” ×• ×™</h2>
+
+<ul>
+<li>
+<p>æœ‰ï¼“å€‹ç‰¹å®šçš„å­éŸ³ (×• ×™ ×”) ï¼Œåœ¨<strong>æ¯éŸ³ç¬¦è™Ÿç³»çµ±</strong>æœªè¢«å»ºç«‹èµ·ä¾†ä½¿ç”¨ä¹‹å‰ï¼Œä»¥è‰²åˆ—äººæœƒå°‡å®ƒå€‘æ‹¿ä¾†ç•¶æ¯éŸ³ä¾†ç™¼éŸ³ï¼Œé€™ï¼“å€‹å­éŸ³å°±ç¨±ç‚º<strong>æ¯éŸ³å­—æ¯</strong>ã€‚</p>
+
+<p><a href="../images/img01-04.png" target="_blank"><img src="../images/img01-04.png" alt="æ¯éŸ³å­—æ¯" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>ï¼“å€‹æ¯éŸ³å­—æ¯ ×” ×• ×™</p>
+
+<ul>
+<li>å­éŸ³×” ä¸€èˆ¬è¢«ç”¨ä¾†æŒ‡æ´¾æˆæ¯éŸ³ a ç”¨ã€‚</li>
+<li>å­éŸ³×™ ä¸€èˆ¬è¢«ç”¨ä¾†æŒ‡æ´¾æˆæ¯éŸ³ e, i ç”¨ã€‚</li>
+<li>å­éŸ³×• ä¸€èˆ¬è¢«ç”¨ä¾†æŒ‡æ´¾æˆæ¯éŸ³ o, u ç”¨ã€‚</li>
+</ul>
+</li>
+</ul>
+
+<blockquote>
+<p>PSï¼š<br>
+æœ‰é—œæ¯éŸ³æ–¹é¢çš„ä»‹ç´¹ï¼Œè«‹åƒè€ƒç¬¬ä¸‰ã€å››ç« </p>
+</blockquote>
+
+<h2>1.3ã€€ï¼”å€‹å–‰éŸ³å­—æ¯ × ×” ×— ×¢</h2>
+
+<ul>
+<li>
+<p>å–‰éŸ³å­—æ¯ï¼šç”±å’½å–‰ç™¼è²çš„å­—æ¯</p>
+
+<p><a href="../images/img01-05.png" target="_blank"><img src="../images/img01-05.png" alt="å–‰éŸ³å­—æ¯" style="max-width:100%;"></a></p>
+</li>
+<li><p>å­—æ¯ ×¨ ä¸å±¬æ–¼å–‰éŸ³ï¼Œåªæ˜¯å®ƒæœ‰äº›æ€§è³ªèˆ‡å–‰éŸ³å­—æ¯ä¸€æ¨£ï¼Œæœ‰æ™‚æœƒç›¸æä¸¦è«–ã€‚</p></li>
+<li>
+<p>ï¼”å€‹å–‰éŸ³å­—æ¯</p>
+
+<ul>
+<li>×</li>
+<li>×”</li>
+<li>×—</li>
+<li>×¢</li>
+</ul>
+</li>
+</ul>
+
+<h2>1.4ã€€ï¼•å€‹å­—æ¯æœ‰å­—å°¾å½¢å¼ (sofit) ×¥/×¦ ,×£/×¤ ,×Ÿ/×  ,×/× ,×š/×›</h2>
+
+<ul>
+<li>
+<p>æœ‰ï¼•å€‹å­—æ¯æœ‰å­—å°¾å½¢å¼çš„ç‰¹æ€§ï¼Œç•¶é€™äº›å­—æ¯å‰›å¥½æ˜¯ä½æ–¼å–®å­—çš„å­—å°¾æ™‚ï¼Œå°±è¦ä½¿ç”¨å­—å°¾å½¢å¼(final form)ä¾†è¡¨ç¤ºã€‚<br>
+ä¾‹å¦‚ï¼šé“è·¯ ×“×¨×šï¼Œä¸–ç•Œ ××¨×¥ ã€‚</p>
+
+<p><a href="../images/img01-06.png" target="_blank"><img src="../images/img01-06.png" alt="å­—å°¾å½¢å¼" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>æ¯å€‹å­—å°¾å­—æ¯æœ‰å…¶å°æ‡‰çš„<strong>åç¨±èªªæ³•</strong>ã€‚</p>
+
+<ul>
+<li>×› çš„å­—å°¾ ×š ï¼Œå«åš <strong>kaf sofit</strong>ï¼Œæˆ–æ˜¯ <strong>final kaf</strong>ã€‚</li>
+<li>× çš„å­—å°¾ × ï¼Œå«åš <strong>mem sofit</strong>ï¼Œæˆ–æ˜¯ <strong>final mem</strong>ã€‚</li>
+<li>×  çš„å­—å°¾ ×Ÿ ï¼Œå«åš <strong>nun sofit</strong>ï¼Œæˆ–æ˜¯ <strong>final nun</strong>ã€‚</li>
+<li>×¤ çš„å­—å°¾ ×£ ï¼Œå«åš <strong>pey sofit</strong>ï¼Œæˆ–æ˜¯ <strong>final pey</strong>ã€‚</li>
+<li>×¦ çš„å­—å°¾ ×¥ ï¼Œå«åš <strong>tsade sofit</strong>ï¼Œæˆ–æ˜¯ <strong>final tsade</strong>ã€‚</li>
+</ul>
+</li>
+</ul>
+
+<h2>1.5ã€€æœ‰ï¼–å€‹Begadkephatå­—æ¯ ×‘ ×’ ×“ ×› ×¤ ×ª</h2>
+
+<p>å¸Œä¼¯ä¾†æ–‡å­—æ¯ä¸­ï¼Œæœ‰ï¼–å€‹å­—æ¯å…·æœ‰å…©ç¨®ç™¼éŸ³æ–¹å¼ã€‚é€™6å€‹å­—æ¯ç¨±ç‚º Begadkephatã€‚<br>
+å®ƒå€‘æœƒä»¥å­—æ¯æœ‰æ²’æœ‰å«<strong>é»ç¬¦è™Ÿ</strong>ä¾†è¡¨ç¤º</p>
+
+<ul>
+<li>å«é»ç¬¦è™Ÿçš„å­—æ¯ï¼Œä»¥ã€å¡éŸ³ã€ä¾†ç™¼éŸ³ã€‚ï¼ˆå¦‚è‹±æ–‡çš„ b, pï¼‰</li>
+<li>
+<p>ä¸å«é»ç¬¦è™Ÿçš„å­—æ¯ï¼Œä»¥ã€æ“¦éŸ³ã€ä¾†ç™¼éŸ³ã€‚ï¼ˆå¦‚è‹±æ–‡çš„ v, fï¼‰</p>
+
+<p><a href="../images/img01-07.png" target="_blank"><img src="../images/img01-07.png" alt="Begadkephatå­—æ¯" style="max-width:100%;"></a></p>
+</li>
+</ul>
+
+<blockquote>
+<p>PS : <br>
+ä¾æ“š<a href="https://www.facebook.com/groups/308100932705850/">å­¸ç¿’å¸Œä¼¯ä¾†èª-å¥‡å¸ƒèŒ²</a>çš„ <a href="https://www.facebook.com/ha.terence?hc_location=ufi">Terence Ha</a> å° Begadkephat çš„èªªæ˜ï¼Œå¯ä»¥æ›´æ¸…æ¥šæ˜ç™½ Begadkephat çš„æ„ç¾©ã€‚</p>
+
+<p>Begadkephatï¼Œå¯¦éš›ä¸Šæ˜¯å€Ÿç”¨äº† <br>
+bet çš„ bï¼Œgimmel çš„ gï¼Œdalet çš„ dï¼Œ<br>
+kaf çš„ kï¼Œpey çš„ ph å’Œ tav çš„ tï¼Œ<br>
+åŠ ä¸ŠéŸ»æ¯(æ¯éŸ³)å¾Œï¼Œb-g-d è®Šæˆ begadï¼Œk-ph-t è®Šæˆ kephatã€‚</p>
+</blockquote>
+
+<h2>1.6ã€€ç¸½çµ</h2>
+
+<p>ä½œè€…åœ¨å€‹äººéƒ¨è½æ ¼<a href="http://pertonchang.blogspot.tw/">Blog</a>ä¸­ï¼Œå¸¸æœ‰åˆ†äº«å¸Œä¼¯ä¾†æ–‡å­¸ç¿’å¿ƒå¾—æ–‡ç« ï¼Œè®€è€…å¯å¤šåŠ ä»¥é–±è¦½ã€‚</p>
+
+<ul>
+<li>
+<p>å­—æ¯å½™æ•´è¡¨</p>
+
+<p><a href="../images/img01-08.png" target="_blank"><img src="../images/img01-08.png" alt="å­—æ¯å½™æ•´è¡¨" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>ç¶²è·¯è³‡æº</p>
+
+<ul>
+<li>
+<a href="https://www.facebook.com/groups/308100932705850/">å­¸ç¿’å¸Œä¼¯ä¾†èª-å¥‡å¸ƒèŒ²</a>ç¤¾ç¾¤ <a href="https://www.facebook.com/kara0622">Kara Lu</a> è€å¸«ä¹‹<a href="https://www.youtube.com/playlist?list=PLsNJO0nl_IhQKrgYx2QxJQCeytdf03PNs">å¸Œä¼¯ä¾†æ–‡-å­—æ¯ &amp; ç™¼éŸ³</a>
+</li>
+<li>
+<a href="http://pertonchang.blogspot.tw/2015/06/blog-post_26.html#links">å¸Œä¼¯ä¾†æ–‡å­—æ¯å…¥é–€HAME</a>ï¼šHebrewPod101.com - Hebrew Alphabet Made Easy</li>
+<li>
+<a href="https://www.facebook.com/llukeleung/videos/o.308100932705850/10200750538641520/?type=2&amp;theater">å¸Œä¼¯ä¾†æ–‡å­—æ¯è¡¨è®€éŸ³</a>ï¼šç”±<a href="https://www.facebook.com/groups/308100932705850/">å­¸ç¿’å¸Œä¼¯ä¾†èª-å¥‡å¸ƒèŒ²</a>ç¤¾ç¾¤<a href="https://www.facebook.com/llukeleung">Luke Leung</a>å¼Ÿå…„æä¾›</li>
+<li><a href="https://www.youtube.com/playlist?list=PLsNJO0nl_IhR31uQgxYxAV4rS0S5CBoYs">è¬é–€å¤§å­¸Â·è–ç¶“å¸Œä¼¯ä¾†èª</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLsNJO0nl_IhRQa1a7kKl_58wTSaIcCVXk">Teaching Myself HEBREW</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLsNJO0nl_IhRC0hoijjHRHZl3IBBviDFu">Hebrew Alphabet</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLsNJO0nl_IhTS9xn_O5oeY96R_7l6Skdn">BL211-å¸Œä¼¯ä¾†æ–‡ Hebrew 1</a></li>
+</ul>
+</li>
+</ul>
+
+<p><a name="%E6%B7%B7%E6%B7%86%E7%A9%B9%E8%92%BC"></a></p>
+
+<ul>
+<li>
+<p>æ··æ·†ç©¹è’¼</p>
+
+<p>å‰›é–‹å§‹å­¸ç¿’å¸Œä¼¯ä¾†æ–‡æ™‚ï¼Œæœ€è®“ç­†è€…æ··æ·†ä¸æ¸…çš„äº‹ï¼Œå°±æ˜¯22å€‹å­—æ¯çš„<strong>è‹±æ–‡è®€éŸ³</strong>ã€‚ä¾†è‡ªç¶²ç«™ã€åœ–æ›¸æˆ–æ˜¯ç¤¾ç¾¤çš„å„ç¨®è³‡æ–™å¤šå¤šå°‘å°‘éƒ½æœƒæœ‰äº›å·®ç•°ã€‚å°æ­¤ï¼Œå»ºè­°è®€è€…è¦å…ˆäº†è§£æœ‰é€™å€‹ç¾è±¡ï¼Œä½†ä¹Ÿä¸è¦é™åœ¨æ­¤ä¸­ï¼ˆç­†è€…å› å­¸ç†å·¥éŒ™éŠ–å¿…è¼ƒï¼Œè‡´ä½¿æ›¾é™åœ¨æ­¤ä¸€æ®µæ™‚é–“ã€‚ï¼‰ï¼Œåªè¦ç¨åŠ åƒè€ƒå°±å¥½ï¼Œä¸ç”¨å¤ªèŠ±æ™‚é–“åœ¨æ­¤ã€‚</p>
+
+<p><a href="https://drive.google.com/file/d/0B_l7A1kTqGHmZzRpN1FsNExzazQ/view?usp=sharing">å­—æ¯å·®ç•°</a></p>
+
+<p>2015å¹´3æœˆ1æ—¥ï¼ŒæŸ´éœç™¼è¡¨çš„ä¸­åœ‹éœ§éœ¾èª¿æŸ¥ç´€éŒ„ç‰‡<a href="https://www.youtube.com/watch?v=BgEpruEOrFg"><strong>è’¼ç©¹ä¹‹ä¸‹</strong></a>ï¼Œå„ªé…·ç¶²è·¯ä¸Šä¸€å¤©çš„é»æ“Šæ¬¡æ•¸è¶…é599è¬æ¬¡ï¼Œè¡¨é¢ä¾†èªªå®ƒæ˜¯åœ¨è«‡ PM2.5ï¼Œä½†å®ƒä¹Ÿå¼•ç”³å‡ºå¾ˆå¤šã€ä¸åŒé¢å‘çš„è­°é¡Œå¯ä»¥è¨è«–ã€‚å¸Œæœ›è®€è€…åœ¨è¾›è‹¦å­¸ç¿’å¸Œä¼¯ä¾†æ–‡çš„éç¨‹ä¸­ï¼Œæœ‰æ™‚ä¹Ÿèƒ½æ”¾æ…¢é»è…³æ­¥ï¼Œçœ‹æ¸…æ¥šä½ æ‰€é¢å°çš„ç¶²è·¯è³‡è¨Šæˆ–æ˜¯ä½ å­¸ç¿’çš„çœŸæ­£ç›®æ¨™æ˜¯ä»€éº¼ï¼Ÿæ˜¯è¦è®€èˆŠç´„åŸæ–‡ï¼Ÿé‚„æ˜¯æƒ³å­¸ç¾ä»£å¸Œä¼¯ä¾†æ–‡ï¼Ÿä¸è¦é™åœ¨ä¸€ç‰‡è¿·éœ§ä¸­ï¼ï¼</p>
+</li>
+</ul>
+
+<p>å›åˆ°<a href="../README.md">ç›®éŒ„æ¸…å–®</a>é ï¼Œé¸è®€å…¶ä»–ç« ç¯€ï¼</p>
+
+<hr>
 </body>
 </html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
